@@ -1,0 +1,2 @@
+timestamp	test accuracy
+20200410170717	tf.Tensor(0.92156863, shape=(), dtype=float32)
