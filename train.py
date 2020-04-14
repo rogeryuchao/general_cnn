@@ -7,7 +7,7 @@ import sys
 
 # User defined packages
 from configuration import IMAGE_HEIGHT, IMAGE_WIDTH, CHANNELS, \
-    EPOCHS, BATCH_SIZE, save_model_root_dir, log_root_dir,  GLOBAL_LEARNING_RATE, \
+    EPOCHS, BATCH_SIZE, save_model_root_dir, save_every_n_epoch, log_root_dir,  GLOBAL_LEARNING_RATE, \
     WEIGHT_DECAY, THRESHOLD
 from prepare_data import generate_datasets, load_and_preprocess_image
 from models import mobilenet_v1, mobilenet_v2, mobilenet_v3_large, mobilenet_v3_small, \
@@ -171,7 +171,7 @@ def main(argv):
                 file.write(str(valid_step) + "\t")
                 file.write(str(valid_accuracy.result().numpy()) + "\t")
                 file.write(str(predict_labels) + "\t")
-                file.write(str(labels) + "\n")
+                file.write(str(valid_labels) + "\n")
                 file.close()
                 
             # Print the info on the screen for developer to monitor validation result
